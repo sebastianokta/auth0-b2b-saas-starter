@@ -48,6 +48,7 @@ import {
 } from "@/components/ui/table"
 
 import { deleteConnection } from "./oidc/new/actions"
+import { createSSOTicket } from "./actions"
 
 interface Props {
   connections: {
@@ -204,6 +205,14 @@ export function ConnectionsList({ connections }: Props) {
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
+        <Button className="ml-3"  onClick={async () => {
+                            const ticket = await createSSOTicket()
+                            toast.success('Opening in a new tab for configuration.')
+                            window.open(ticket)
+                            
+                          }}>
+                             <PlusIcon className="mr-1 size-4" />
+                            Self-Service SSO</Button>
       </CardFooter>
     </Card>
   )

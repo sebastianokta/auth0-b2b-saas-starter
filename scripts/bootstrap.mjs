@@ -173,6 +173,8 @@ try {
         "create:scim_config",
         "update:scim_config",
         "delete:scim_config",
+             //SSO TICKETS
+             "create:sso_access_tickets",
       ]
     }),
   ];
