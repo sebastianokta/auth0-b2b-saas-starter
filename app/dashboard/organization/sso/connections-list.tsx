@@ -208,6 +208,7 @@ export function ConnectionsList({ connections }: Props) {
         <Button className="ml-3"  onClick={async () => {
                             const ticket = await createSSOTicket()
                             toast.success('Opening in a new tab for configuration.')
+                            //@ts-ignore
                             window.open(ticket)
                             
                           }}>
