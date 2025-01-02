@@ -14,6 +14,7 @@ export default async function Home() {
 
   return (
     <div className="container relative sm:grid h-screen flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
+    
       {session ? (
         <a
           href="/api/auth/logout"
@@ -37,8 +38,8 @@ export default async function Home() {
       )}
 
       <div className="relative hidden h-full flex-col bg-muted p-10 text-white dark:border-r lg:flex">
-        <video src="https://d25d2506sfb94s.cloudfront.net/r/13/hero_business.mp4" ></video>
-        <div className="absolute inset-0 bg-black" />
+        
+        <div className="absolute inset-0 bg-black " > <video src="https://d25d2506sfb94s.cloudfront.net/r/13/hero_business.mp4" ></video></div>
         <div className="relative z-20 flex items-center text-lg font-medium">
           <Auth0Logo className="mr-2 size-8" />
           <span className="font-semibold">SaaStart</span>
