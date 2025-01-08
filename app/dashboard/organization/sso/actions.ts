@@ -39,8 +39,9 @@ export const createSSOTicket = withServerActionAuth(
   async function createSSOTickets(session: Session) {
 
   try {
+    console.log(session.user)
 
-     const ticket =  await managementClient.selfServiceProfiles.createSsoTicket({id: 'ssp_gWrU3zgBbN559eW2xqtE35'}, {enabled_clients: ['S63jfvFTGSocru0txEVtJ2PfCXie9QCW', 'vv4F6p99xSTjxSQHtCuI5qD3Q6Det6Zv' ], enabled_organizations: [{organization_id:'org_ZJY16zzL3q7fWqc7'}], connection_config: {name: 'okta'}})
+     const ticket =  await managementClient.selfServiceProfiles.createSsoTicket({id: 'ssp_gWrU3zgBbN559eW2xqtE35'}, {enabled_clients: ['S63jfvFTGSocru0txEVtJ2PfCXie9QCW', 'vv4F6p99xSTjxSQHtCuI5qD3Q6Det6Zv' ], enabled_organizations: [{organization_id:'org_ZJY16zzL3q7fWqc7'}] , connection_config: {name: 'okta'}, })
      return `${ticket.data.ticket}`
   }  catch (error) {
       console.error("failed to create the SSO connection", error)
