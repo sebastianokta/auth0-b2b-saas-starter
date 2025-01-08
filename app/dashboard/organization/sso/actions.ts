@@ -37,7 +37,7 @@ export const verifyDomain = withServerActionAuth(
 export const createSSOTicket = withServerActionAuth(
 
   async function createSSOTickets(session: Session) {
-    console.log(session.user)
+    console.log(session.idToken)
   try {
     
 
